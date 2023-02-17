@@ -1,0 +1,13 @@
+type: hyperskill
+title: Linear Regression from Scratch
+language: English
+summary: <p>Linear relationship estimation is probably the first kind of modeling
+  we come across at school. Linear regression is one of the most popular methods for
+  estimating linear relationships and one of the most popular machine learning algorithms.
+  This project explains how the linear regression algorithm works. These basics will
+  help you with model interpretation and debugging if you want to fit and predict
+  linear models.</p><br/><br/>Learn more at <a href="https://hyperskill.org/projects/195?utm_source=ide&utm_medium=ide&utm_campaign=ide&utm_content=project-card">https://hyperskill.org/projects/195</a>
+programming_language: Python
+content:
+- Linear Regression from Scratch
+mode: Study

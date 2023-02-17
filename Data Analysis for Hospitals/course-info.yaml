@@ -1,0 +1,16 @@
+type: hyperskill
+title: Data Analysis for Hospitals
+language: English
+summary: "<p>You know the story. Data is everywhere: texts, images, news, spreadsheets.\
+  \ Data determines our habits and future. The amount of data is growing by the second.\
+  \ Data analysis is good for any line of business. How to stay afloat in this great\
+  \ water of data? In this project, you will conduct a comprehensive study with pandas.\
+  \ Upload datasets, deal with data omissions and incorrect data filling, find the\
+  \ main statistical characteristics, and visualize your data. Let&#39;s do it!</p><br/><br/>Learn\
+  \ more at <a href=\"https://hyperskill.org/projects/152?utm_source=ide&utm_medium=ide&utm_campaign=ide&utm_content=project-card\"\
+  >https://hyperskill.org/projects/152</a>"
+programming_language: Python
+content:
+- Data Analysis for Hospitals
+- Topics
+mode: Study

@@ -1,0 +1,78 @@
+def print_board():
+    print('---------')
+    print('|', game_board[0][0], game_board[0][1], game_board[0][2], '|')
+    print('|', game_board[1][0], game_board[1][1], game_board[1][2], '|')
+    print('|', game_board[2][0], game_board[2][1], game_board[2][2], '|')
+    print('---------')
+
+
+def make_a_move(player):
+    while True:
+        move = input("Enter the coordinates: ")
+        x, y = move.split()
+        if x.isdigit() and y.isdigit():
+            x = int(x) - 1
+            y = int(y) - 1
+            if not ((0 <= x <= 2) and (0 <= y <= 2)):
+                print("Coordinates should be from 1 to 3!")
+            else:
+                if game_board[x][y] == '_':
+                    game_board[x][y] = player
+                    return game_board
+                else:
+                    print('This cell is occupied! Choose another one!')
+        else:
+            print('You should enter numbers!')
+
+
+def check_for_wins():
+    x_wins = 0
+    o_wins = 0
+    row1 = game_board[0]
+    row2 = game_board[1]
+    row3 = game_board[2]
+    column1 = game_board[0][0] + game_board[1][0] + game_board[2][0]
+    column2 = game_board[0][1] + game_board[1][1] + game_board[2][1]
+    column3 = game_board[0][2] + game_board[1][2] + game_board[2][2]
+    diagonal1 = game_board[0][0] + game_board[1][1] + game_board[2][2]
+    diagonal2 = game_board[0][2] + game_board[1][1] + game_board[2][0]
+    combos = [row1, row2, row3, column1, column2, column3, diagonal1, diagonal2]
+    for i in combos:
+        if i == 'XXX':
+            x_wins += 1
+        if i == 'OOO':
+            o_wins += 1
+    if x_wins > 0:
+        print_board()
+        print('X wins')
+        return 1
+    elif o_wins > 0:
+        print_board()
+        print('O wins')
+        return 1
+    elif x_wins == 0 and o_wins == 0 and sum(row.count('_') for row in game_board) == 0:
+        print_board()
+        print('Draw')
+        return 2
+    elif x_wins == 0 and o_wins == 0 and sum(row.count('_') for row in game_board) != 0:
+        print_board()
+        return 0
+
+
+blank_board = '_________'
+game_board = [[blank_board[0], blank_board[1], blank_board[2]], [blank_board[3], blank_board[4], blank_board[5]],
+              [blank_board[6], blank_board[7], blank_board[8]]]
+
+print_board()
+print('Tic Tac Toe \nX plays first. Enter coordinates for the first move:')
+
+wins = 0
+turn = 1
+while wins == 0:
+    if turn % 2 == 1:
+        player = 'X'
+    if turn % 2 == 0:
+        player = 'O'
+    make_a_move(player)
+    wins = check_for_wins()
+    turn += 1
